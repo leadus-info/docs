@@ -1,6 +1,6 @@
 ---
-name: article-issue
-description: leadus科目リポジトリ(math・phys等、`<subject>/{beginner,intermediate,advanced,bachelor,master}/`配下)の特定記事について、既に洗い出されている問題点をGitHub issueとして起票する際に使う。「この指摘をissueにして」「問題点をissueに起票して」「このレビュー結果でissue立てて」「さっきの指摘まとめてissue化して」といった依頼で使用する。問題点そのものはユーザーが直接列挙する場合もあれば、article-critique等の別スキルの出力を渡される場合もある——本スキルはそれらを入力として受け取るだけで、問題点の洗い出し自体は行わない。起票には対象リポジトリの`.github/ISSUE_TEMPLATE/article-improvement.yml`(「既存記事の改善提案」テンプレート)を用いる。SKIP: issueを立てずに直接記事を修正してほしい依頼(誤字・表記ゆれ等の軽微な修正はWORKFLOW.mdの方針でissue不要、直接編集で対応)、対象が科目記事のパスではない場合(platform/assets-web等のインフラ・基盤issueは対象外)、issueへの起票ではなくPRの作成・修正そのものを頼まれた場合([[article-fix-pr]]の担当)。
+name: create-issue
+description: leadus科目リポジトリ(math・phys等、`<subject>/{beginner,intermediate,advanced,bachelor,master}/`配下)の特定記事について、既に洗い出されている問題点をGitHub issueとして起票する際に使う。「この指摘をissueにして」「問題点をissueに起票して」「このレビュー結果でissue立てて」「さっきの指摘まとめてissue化して」といった依頼で使用する。問題点そのものはユーザーが直接列挙する場合もあれば、review-article等の別スキルの出力を渡される場合もある——本スキルはそれらを入力として受け取るだけで、問題点の洗い出し自体は行わない。起票には対象リポジトリの`.github/ISSUE_TEMPLATE/article-improvement.yml`(「既存記事の改善提案」テンプレート)を用いる。SKIP: issueを立てずに直接記事を修正してほしい依頼(誤字・表記ゆれ等の軽微な修正はWORKFLOW.mdの方針でissue不要、直接編集で対応)、対象が科目記事のパスではない場合(platform/assets-web等のインフラ・基盤issueは対象外)、issueへの起票ではなくPRの作成・修正そのものを頼まれた場合([[fix-article]]の担当)。
 ---
 
 # 記事issueの起票
@@ -19,7 +19,7 @@ description: leadus科目リポジトリ(math・phys等、`<subject>/{beginner,i
    対象repoの `.github/ISSUE_TEMPLATE/article-improvement.yml` のフィールドに沿って構成する(mathとphysで同一構成であることを確認済み。他科目リポジトリでも同様の構成を前提とするが、初回は念のため該当ファイルを確認する)。
    - **title**: `[改善] <記事タイトルや論点の要約>`
    - **対象記事**: `<repo>/<stageを含む相対パス>` の形式(テンプレートの例: `math/advanced/analysis/derivatives.md`)
-   - **現状の問題点**: 入力された問題点を箇条書きで整理する。該当箇所の引用があれば活かす。指摘の出典(誰が指摘したか、article-critique等)は本文に含めず、問題点そのものに絞る。
+   - **現状の問題点**: 入力された問題点を箇条書きで整理する。該当箇所の引用があれば活かす。指摘の出典(誰が指摘したか、review-article等)は本文に含めず、問題点そのものに絞る。
    - **改善案**: 入力に改善の方向性が含まれていれば記載する。なければ空欄でよい(テンプレート上必須ではない)。
    - **labels**: `improvement`
 
@@ -35,4 +35,4 @@ description: leadus科目リポジトリ(math・phys等、`<subject>/{beginner,i
 
 6. **結果の報告**
    - 作成されたissueのURLと番号をユーザーに伝える。
-   - 続けて修正・PR作成まで行いたい場合は[[article-fix-pr]]スキルで引き継げる旨を伝える。
+   - 続けて修正・PR作成まで行いたい場合は[[fix-article]]スキルで引き継げる旨を伝える。
