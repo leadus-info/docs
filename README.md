@@ -12,6 +12,5 @@ Leadus Projectの成果物は、全てリポジトリ単位でライセンスを
 本リポジトリのライセンスは[こちら](./LICENSE)をご覧ください。
 
 ## 貢献の流れ
-Leadus Projectへの貢献を歓迎します。\
-[こちら](./participation/WORKFLOW.md)をご確認の上、各教科のリポジトリに対しPRを飛ばしてください。
+Leadus Projectに参加し、コンテンツの改善・アップデートにご協力いただける方は、[こちら](./contribution/README.md)をご覧ください。
 
