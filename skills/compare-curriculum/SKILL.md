@@ -1,5 +1,5 @@
 ---
-name: curriculum-alignment-review
+name: compare-curriculum
 description: 科目記事(<科目>/{beginner,intermediate,advanced,bachelor,master}/配下のMarkdown。現状はmath・science・society・information科目に対応)の内容が、文部科学省学習指導要領と比べて網羅的か、構成・学習順序・前提関係がおかしくないかを確認するスキル。「学習指導要領と比較して」「網羅性を確認して」「学習順序がおかしくないか」「指導要領に照らして」といった依頼、または特定の科目×難易度(例:「中学校数学の代数」「advancedのanalysis」「高校物理」「中学校社会の歴史的分野」「情報Ⅰ」)を指定して監査を頼まれた場合に使う。学習指導要領のPDFはスキル内のreferences/<科目>/に抽出済みテキストとして同梱する設計で、リポジトリ内やmext.go.jpのPDF原本を都度読み込む必要はない。SKIP: 誤字脱字・表記ゆれ・フロントマター形式などCONTRIBUTING.mdのルールに関するレビュー(これは別スキル/通常レビューの範疇)、bachelor/master記事のみを単体で(学習指導要領と無関係に)レビューする依頼、参考資料が未整備の科目(references/<科目>/が存在しない)についてのみのレビュー依頼。
 ---
 

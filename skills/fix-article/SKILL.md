@@ -1,6 +1,6 @@
 ---
-name: article-fix-pr
-description: leadus科目リポジトリ(math・phys等)でGitHub issueとして起票済みの記事改善issueに対応し、新規ブランチを作成して記事を修正し、pushしてPRを作成する際に使う。「issueに従って直して」「このissueを直してPRまで出して」「さっきのissue直して」「修正してPR作って」といった依頼で使用する。issueの指定がない場合は、同じ会話内で直前に[[article-issue]]スキルが起票したissueをデフォルトの対象として使う。それがない場合はユーザーにリポジトリとissue番号(またはURL)を確認する。SKIP: 対応すべきGitHub issueが存在せず単に記事を編集してほしいだけの依頼(通常の編集で対応)、PR作成後のレビュー・マージ自体を頼まれた場合(これはメンテナーの手動レビュー工程でありスキル対象外)、issueの起票自体を頼まれた場合([[article-issue]]の担当)。
+name: fix-article
+description: leadus科目リポジトリ(math・phys等)でGitHub issueとして起票済みの記事改善issueに対応し、新規ブランチを作成して記事を修正し、pushしてPRを作成する際に使う。「issueに従って直して」「このissueを直してPRまで出して」「さっきのissue直して」「修正してPR作って」といった依頼で使用する。issueの指定がない場合は、同じ会話内で直前に[[create-issue]]スキルが起票したissueをデフォルトの対象として使う。それがない場合はユーザーにリポジトリとissue番号(またはURL)を確認する。SKIP: 対応すべきGitHub issueが存在せず単に記事を編集してほしいだけの依頼(通常の編集で対応)、PR作成後のレビュー・マージ自体を頼まれた場合(これはメンテナーの手動レビュー工程でありスキル対象外)、issueの起票自体を頼まれた場合([[create-issue]]の担当)。
 ---
 
 # issueに基づく記事修正PRの作成
@@ -13,7 +13,7 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 ## 手順
 
 1. **対象issueの特定**
-   - 直前の会話で[[article-issue]]スキルがissueを起票していれば、そのrepo・issue番号をそのまま使う。
+   - 直前の会話で[[create-issue]]スキルがissueを起票していれば、そのrepo・issue番号をそのまま使う。
    - なければユーザーにリポジトリ名とissue番号/URLを尋ねる。番号が分からない場合は `gh issue list --repo leadus-info/<repo> --state open --label improvement` で候補を提示して選んでもらう。
 
 2. **issue内容の取得**
