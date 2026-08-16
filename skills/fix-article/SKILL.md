@@ -38,16 +38,13 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    - `CONTRIBUTING.md` の記載ルール(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性)と、対象`stage`のチェックリストに従う。
    - 科目固有の注意点があれば `GUID.md` も確認する。
 
-6. **ローカル確認(可能な範囲で)**
-   - `WORKFLOW.md` §4 に沿って `npm install`(初回のみ)・`npm run dev` でフロントマター・パンくず・リンクの表示を確認する。実行が難しい場合はスキップしたことをユーザーに伝える。
-
-7. **コミット**
+6. **コミット**
    - 変更内容が分かる簡潔なコミットメッセージを付ける。issue番号への言及はコミットではなくPR側で行う。
 
-8. **push・PR作成前の確認**
+7. **push・PR作成前の確認**
    - originへのpushとPR作成はリポジトリ外に見える行為のため、diffの要約を提示し、実行してよいかユーザーに確認する。
 
-9. **push・PR作成**
+8. **push・PR作成**
    ```
    git push -u origin <branch>
    gh pr create --repo leadus-info/<repo> --base main --head <branch> \
@@ -65,5 +62,5 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    ```
    - `WORKFLOW.md` §5 の方針(1PR=1トピック・1難易度、`Closes #番号`で紐づけ)に従う。
 
-10. **結果の報告**
+9. **結果の報告**
     - 作成されたPRのURLをユーザーに伝える。
