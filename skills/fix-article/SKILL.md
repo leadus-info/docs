@@ -25,7 +25,7 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 3. **作業ディレクトリの準備**
    - `~/work/<repo>/` に移動する。
    - `git status` で作業ツリーがクリーンか確認する(未コミットの変更があれば先にユーザーに確認)。
-   - `git checkout develop && git pull` で最新化する。
+   - `git checkout main && git pull` で最新化する。
 
 4. **ブランチ作成**
    - `WORKFLOW.md` の命名規則 `<種別>/<トピックパス>` に従う。
@@ -50,7 +50,7 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 9. **push・PR作成**
    ```
    git push -u origin <branch>
-   gh pr create --repo leadus-info/<repo> --base develop --head <branch> \
+   gh pr create --repo leadus-info/<repo> --base main --head <branch> \
      --title "<変更内容が分かるタイトル>" \
      --body "$(cat <<'EOF'
    Closes #<issue番号>
