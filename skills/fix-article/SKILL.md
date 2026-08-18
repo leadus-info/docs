@@ -29,7 +29,9 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    - `git checkout main && git pull` で最新化する。
 
 4. **ブランチ作成**
-   - ブランチ名は原則として `feature/issue<issue番号>` とする(例: issue #42 なら `feature/issue42`)。
+   - ブランチ名は `fix/<issue番号>-<トピックスラッグ>` とする。
+     - トピックスラッグは対象記事パスから `<repo>/`・`<stage>/`・拡張子を除き、`/`を`-`に置き換えたもの。例: issue #42、`math/advanced/analysis/derivatives.md`の修正なら `fix/42-analysis-derivatives`。
+   - `fix`以外の種別(`improve`等)が必要になれば、そのつど追加する。
    - ユーザーからブランチ名の指定があれば、そちらを優先する。
    - `git checkout -b <branch>`
 
