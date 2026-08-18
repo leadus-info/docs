@@ -11,8 +11,7 @@ Leadus Projectの成果物は、全てリポジトリ単位でライセンスを
 
 本リポジトリのライセンスは[こちら](./LICENSE)をご覧ください。
 
-## 参画の流れ
-Leadus Projectへの参画を歓迎します。\
+## 貢献の流れ
+Leadus Projectへの貢献を歓迎します。\
 [こちら](./participation/README.md)をご確認の上、各教科のリポジトリに対しPRを飛ばしてください。
 
-## 

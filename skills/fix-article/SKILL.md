@@ -8,7 +8,8 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 ## 前提
 
 - 対象リポジトリ(`math`・`phys`等)はいずれも `leadus-info` organization 配下で、ユーザーはADMIN権限を持つ。フォーク不要で `origin` に直接ブランチをpushしてPRを作成してよい。
-- 各科目リポジトリの規約は `WORKFLOW.md`・`CONTRIBUTING.md`・`GUID.md`(該当科目)を参照する。手順・命名規則が本ファイルの記載と食い違う場合は現物のドキュメントを優先する。
+- 各科目リポジトリの規約は `WORKFLOW.md`・`CONTRIBUTING.md`・`GUID.md`(該当科目)を参照する。手順・命名規則が本ファイルの記載と食い違う場合は現物のドキュメントを優先する。ただし**ブランチ命名(手順4)は本ファイルの規則を優先する**。
+- 記事修正後は[[review-article]]スキルで批判的レビューを行い、指摘がなくなるまで修正とレビューを繰り返す(手順6)。
 
 ## 手順
 
@@ -28,9 +29,8 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    - `git checkout main && git pull` で最新化する。
 
 4. **ブランチ作成**
-   - `WORKFLOW.md` の命名規則 `<種別>/<トピックパス>` に従う。
-     - 誤り・欠陥の修正が中心なら `fix/`、内容・構成の改善が中心なら `improve/` を使う(issueテンプレートは「既存記事の改善提案」だが、内容次第でどちらがふさわしいか判断する)。
-     - トピックパスは対象記事パスから `<repo>/` と `<stage>/` と拡張子を除いたもの。例: `math/advanced/analysis/derivatives.md` → `improve/math/analysis/derivatives`。
+   - ブランチ名は原則として `feature/issue<issue番号>` とする(例: issue #42 なら `feature/issue42`)。
+   - ユーザーからブランチ名の指定があれば、そちらを優先する。
    - `git checkout -b <branch>`
 
 5. **記事の修正**
@@ -38,13 +38,18 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    - `CONTRIBUTING.md` の記載ルール(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性)と、対象`stage`のチェックリストに従う。
    - 科目固有の注意点があれば `GUID.md` も確認する。
 
-6. **コミット**
+6. **review-articleスキルによるレビューと反映**
+   - 修正した記事に対して[[review-article]]スキルを実行する。
+   - 専門レビュー・読者追走テストのいずれかで有意な指摘が出た場合は、手順5に戻って記事を修正し、再度本手順でレビューする。
+   - 指摘が「特になし」(実質的な問題なし)になるまでこのサイクルを繰り返す。誤字脱字・表記ゆれ等の形式面はreview-articleの対象外のため、この収束判定には含めない。
+
+7. **コミット**
    - 変更内容が分かる簡潔なコミットメッセージを付ける。issue番号への言及はコミットではなくPR側で行う。
 
-7. **push・PR作成前の確認**
+8. **push・PR作成前の確認**
    - originへのpushとPR作成はリポジトリ外に見える行為のため、diffの要約を提示し、実行してよいかユーザーに確認する。
 
-8. **push・PR作成**
+9. **push・PR作成**
    ```
    git push -u origin <branch>
    gh pr create --repo leadus-info/<repo> --base main --head <branch> \
@@ -57,10 +62,11 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 
    ## 確認事項
    - CONTRIBUTING.mdの<stage>チェックリストを確認した
+   - review-articleスキルでレビューし、指摘がなくなるまで修正したことを確認した
    EOF
    )"
    ```
    - `WORKFLOW.md` §5 の方針(1PR=1トピック・1難易度、`Closes #番号`で紐づけ)に従う。
 
-9. **結果の報告**
+10. **結果の報告**
     - 作成されたPRのURLをユーザーに伝える。
