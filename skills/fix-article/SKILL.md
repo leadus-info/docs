@@ -9,7 +9,7 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 
 - 対象リポジトリ(`math`・`phys`等)はいずれも `leadus-info` organization 配下で、ユーザーはADMIN権限を持つ。フォーク不要で `origin` に直接ブランチをpushしてPRを作成してよい。
 - 各科目リポジトリの規約は `WORKFLOW.md`・`CONTRIBUTING.md`・`GUID.md`(該当科目)を参照する。手順・命名規則が本ファイルの記載と食い違う場合は現物のドキュメントを優先する。ただし**ブランチ命名(手順4)は本ファイルの規則を優先する**。
-- 記事修正後は[[review-article]]スキルで批判的レビューを行い、指摘がなくなるまで修正とレビューを繰り返す(手順6)。
+- 記事の修正・レビューは[[edit-article]]スキルのFlow A(検証付き修正)に委ねる(手順5)。修正内容(issueの内容)は既に具体化しているため、[[edit-article]]側で取捨選択は行われず、修正→Student/Professorによる検証を1回行った時点で打ち切られる(無限にレビュー・修正を繰り返さない)。
 
 ## 手順
 
@@ -35,23 +35,18 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    - ユーザーからブランチ名の指定があれば、そちらを優先する。
    - `git checkout -b <branch>`
 
-5. **記事の修正**
-   - issueの「現状の問題点」の各項目に対応する。「改善案」があれば方向性として活かす。
-   - `CONTRIBUTING.md` の記載ルール(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性)と、対象`stage`のチェックリストに従う。
-   - 科目固有の注意点があれば `GUID.md` も確認する。
+5. **[[edit-article]]スキルによる修正とレビュー(Flow A: 検証付き修正)**
+   - issueの「対象記事」「現状の問題点」「改善案」を入力として[[edit-article]]スキルのFlow Aを実行する。
+   - Flow A内でEditorが`CONTRIBUTING.md`(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性、対象`stage`のチェックリスト)・`GUID.md`(科目固有の注意点)に従って記事を修正し、Student・Professorによる検証を1回行う。
+   - 検証で指摘が残った場合でも、[[edit-article]]の方針通りそこで打ち切られる(自動で修正ラウンドを繰り返さない)。残った指摘があれば次の手順でユーザーに提示し、コミット前に対応するかどうかの判断を仰ぐ。
 
-6. **review-articleスキルによるレビューと反映**
-   - 修正した記事に対して[[review-article]]スキルを実行する。
-   - 専門レビュー・読者追走テストのいずれかで有意な指摘が出た場合は、手順5に戻って記事を修正し、再度本手順でレビューする。
-   - 指摘が「特になし」(実質的な問題なし)になるまでこのサイクルを繰り返す。誤字脱字・表記ゆれ等の形式面はreview-articleの対象外のため、この収束判定には含めない。
-
-7. **コミット**
+6. **コミット**
    - 変更内容が分かる簡潔なコミットメッセージを付ける。issue番号への言及はコミットではなくPR側で行う。
 
-8. **push・PR作成前の確認**
-   - originへのpushとPR作成はリポジトリ外に見える行為のため、diffの要約を提示し、実行してよいかユーザーに確認する。
+7. **push・PR作成前の確認**
+   - originへのpushとPR作成はリポジトリ外に見える行為のため、diffの要約(および手順5で残った指摘があればその内容)を提示し、実行してよいかユーザーに確認する。
 
-9. **push・PR作成**
+8. **push・PR作成**
    ```
    git push -u origin <branch>
    gh pr create --repo leadus-info/<repo> --base main --head <branch> \
@@ -64,11 +59,11 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 
    ## 確認事項
    - CONTRIBUTING.mdの<stage>チェックリストを確認した
-   - review-articleスキルでレビューし、指摘がなくなるまで修正したことを確認した
+   - edit-articleスキル(Flow A)でレビュー・修正したことを確認した(検証後に残った指摘があればその旨も記載する)
    EOF
    )"
    ```
    - `WORKFLOW.md` §5 の方針(1PR=1トピック・1難易度、`Closes #番号`で紐づけ)に従う。
 
-10. **結果の報告**
+9. **結果の報告**
     - 作成されたPRのURLをユーザーに伝える。

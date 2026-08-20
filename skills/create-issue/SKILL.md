@@ -1,6 +1,6 @@
 ---
 name: create-issue
-description: leadus科目リポジトリ(math・phys等、`<subject>/{beginner,intermediate,advanced,bachelor,master}/`配下)の特定記事について、既に洗い出されている問題点をGitHub issueとして起票する際に使う。「この指摘をissueにして」「問題点をissueに起票して」「このレビュー結果でissue立てて」「さっきの指摘まとめてissue化して」といった依頼で使用する。問題点そのものはユーザーが直接列挙する場合もあれば、review-article等の別スキルの出力を渡される場合もある——本スキルはそれらを入力として受け取るだけで、問題点の洗い出し自体は行わない。起票には対象リポジトリの`.github/ISSUE_TEMPLATE/article-improvement.yml`(「既存記事の改善提案」テンプレート)を用いる。SKIP: issueを立てずに直接記事を修正してほしい依頼(誤字・表記ゆれ等の軽微な修正はWORKFLOW.mdの方針でissue不要、直接編集で対応)、対象が科目記事のパスではない場合(platform/assets-web等のインフラ・基盤issueは対象外)、issueへの起票ではなくPRの作成・修正そのものを頼まれた場合([[fix-article]]の担当)。
+description: leadus科目リポジトリ(math・phys等、`<subject>/{beginner,intermediate,advanced,bachelor,master}/`配下)の特定記事について、既に洗い出されている問題点をGitHub issueとして起票する際に使う。「この指摘をissueにして」「問題点をissueに起票して」「このレビュー結果でissue立てて」「さっきの指摘まとめてissue化して」といった依頼で使用する。問題点そのものはユーザーが直接列挙する場合もあれば、[[review-article]]・[[edit-article]]等の別スキルの出力を渡される場合もある——本スキルはそれらを入力として受け取るだけで、問題点の洗い出し自体は行わない。起票には対象リポジトリの`.github/ISSUE_TEMPLATE/article-improvement.yml`(「既存記事の改善提案」テンプレート)を用いる。SKIP: issueを立てずに直接記事を修正してほしい依頼(誤字・表記ゆれ等の軽微な修正はWORKFLOW.mdの方針でissue不要、直接編集で対応)、対象が科目記事のパスではない場合(platform/assets-web等のインフラ・基盤issueは対象外)、issueへの起票ではなくPRの作成・修正そのものを頼まれた場合([[fix-article]]の担当)。
 ---
 
 # 記事issueの起票
