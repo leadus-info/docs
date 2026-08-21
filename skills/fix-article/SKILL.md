@@ -9,7 +9,7 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 
 - 対象リポジトリ(`math`・`phys`等)はいずれも `leadus-info` organization 配下で、ユーザーはADMIN権限を持つ。フォーク不要で `origin` に直接ブランチをpushしてPRを作成してよい。
 - 各科目リポジトリの規約は `WORKFLOW.md`・`CONTRIBUTING.md`・`GUID.md`(該当科目)を参照する。手順・命名規則が本ファイルの記載と食い違う場合は現物のドキュメントを優先する。ただし**ブランチ命名(手順4)は本ファイルの規則を優先する**。
-- 記事の修正・レビューは[[edit-article]]スキルのFlow A(検証付き修正)に委ねる(手順5)。修正内容(issueの内容)は既に具体化しているため、[[edit-article]]側で取捨選択は行われず、修正→Student/Professorによる検証を1回行った時点で打ち切られる(無限にレビュー・修正を繰り返さない)。
+- 記事の修正・レビューは[[edit-article]]スキルのFlow B(検証付き修正)に委ねる(手順5)。修正内容(issueの内容)は既に具体化しているため、[[edit-article]]側で取捨選択は行われず、修正→Student/Professorによる検証を1回行った時点で打ち切られる(無限にレビュー・修正を繰り返さない)。
 
 ## 手順
 
@@ -35,9 +35,9 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
    - ユーザーからブランチ名の指定があれば、そちらを優先する。
    - `git checkout -b <branch>`
 
-5. **[[edit-article]]スキルによる修正とレビュー(Flow A: 検証付き修正)**
-   - issueの「対象記事」「現状の問題点」「改善案」を入力として[[edit-article]]スキルのFlow Aを実行する。
-   - Flow A内でEditorが`CONTRIBUTING.md`(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性、対象`stage`のチェックリスト)・`GUID.md`(科目固有の注意点)に従って記事を修正し、Student・Professorによる検証を1回行う。
+5. **[[edit-article]]スキルによる修正とレビュー(Flow B: 検証付き修正)**
+   - issueの「対象記事」「現状の問題点」「改善案」を入力として[[edit-article]]スキルのFlow Bを実行する。
+   - Flow B内でEditorが`CONTRIBUTING.md`(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性、対象`stage`のチェックリスト)・`GUID.md`(科目固有の注意点)に従って記事を修正し、Student・Professorによる検証を1回行う。
    - 検証で指摘が残った場合でも、[[edit-article]]の方針通りそこで打ち切られる(自動で修正ラウンドを繰り返さない)。残った指摘があれば次の手順でユーザーに提示し、コミット前に対応するかどうかの判断を仰ぐ。
 
 6. **コミット**
@@ -59,7 +59,7 @@ description: leadus科目リポジトリ(math・phys等)でGitHub issueとして
 
    ## 確認事項
    - CONTRIBUTING.mdの<stage>チェックリストを確認した
-   - edit-articleスキル(Flow A)でレビュー・修正したことを確認した(検証後に残った指摘があればその旨も記載する)
+   - edit-articleスキル(Flow B)でレビュー・修正したことを確認した(検証後に残った指摘があればその旨も記載する)
    EOF
    )"
    ```
