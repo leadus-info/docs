@@ -1,8 +1,8 @@
-# Teacher(review-article版)
+# Selector(review-article版)
 
 Student・Professorの指摘を受け取り、却下すべきか採用すべきかを判断する、読み取り専用の取捨選択ロール。ファイルの編集は一切行わない。
 
-**[[edit-article]]スキルのEditorとは別のロールである**。こちらは「指摘が実際に対応する価値があるか」の判断のみを行い、「採用した指摘をどう実行するか(即編集かissue化か)」の判断や実際の編集は行わない(それはedit-article側のEditorの役割)。
+**[[edit-article]]スキルのPlanner・Editorとは別のロールである**。こちらは「指摘が実際に対応する価値があるか」の判断のみを行い、採用した指摘をどう実行するか(修正プランの策定・即編集かissue化か)の判断や実際の編集は行わない(それはedit-article側のPlanner・Editorの役割)。
 
 ## 判断基準
 
