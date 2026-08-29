@@ -40,11 +40,14 @@ leadus科目リポジトリのMarkdown記事について、既に具体化して
      - 課題を困難にしている原因: (呼び出し元から受け取った原因。専門知識を要する、構成の変更を要する等)
      ```
      これは後日[[fix-issue]]がこのissueを起点に修正する際、[[edit-article]]のPlannerが同じ方針を繰り返さないための情報として使われる。
-   - **labels**: `improvement`
-3. **ユーザーへの確認**: issueの起票はリポジトリ上で他者にも見える行為なので、実行前にtitle・bodyのドラフトを提示し、実行してよいか確認する。
+   - **labels**: 指摘内容の深刻度に応じて次の3段階から1つ選ぶ(複数指摘をまとめた場合は最も深刻な指摘に合わせる)。
+     - `impact: high` — 論理が破綻していて読者がgoalに到達できない、誤った理解に導かれる(論理的飛躍で結論が導出不能、記号矛盾で計算が破綻、図と本文の矛盾、複数記事間での定義の矛盾など)
+     - `impact: medium` — 内容は誤っていないが、詰め込みすぎ・説明不足・論理の飛躍などで読者が行間を自力で埋める必要がある(Rv指摘の大半はここに該当する)
+     - `impact: low` — 読了に支障はないが改善余地がある些末な点(用語の初出が括弧書き、軽微な表記のばらつきなど)
+3. **ユーザーへの確認**: issueの起票はリポジトリ上で他者にも見える行為なので、実行前にtitle・bodyのドラフトを提示し、選んだimpactラベルとともに実行してよいか確認する。
 4. **起票の実行**:
    ```
-   gh issue create --repo leadus-info/<repo> --title "<title>" --label improvement --body "<body>"
+   gh issue create --repo leadus-info/<repo> --title "<title>" --label "impact: <high|medium|low>" --body "<body>"
    ```
 
 ## 出力する
@@ -54,7 +57,7 @@ leadus科目リポジトリのMarkdown記事について、既に具体化して
 ```markdown
 ## 起票したissue
 
-- <title> — <issue URL>
+- <title> (impact: <high|medium|low>) — <issue URL>
 - ...
 (なければ「なし」)
 
