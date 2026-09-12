@@ -10,7 +10,7 @@ description: >-
 
 - 対象リポジトリ(`math`・`phys`等)はいずれも `leadus-info` organization 配下で、ユーザーはADMIN権限を持つ。フォーク不要で `origin` に直接ブランチをpushしてPRを作成してよい。
 - 各科目リポジトリの規約は `WORKFLOW.md`・`CONTRIBUTING.md`・`GUID.md`(該当科目)を参照する。手順・命名規則が本ファイルの記載と食い違う場合は現物のドキュメントを優先する。ただし**ブランチ命名(手順4)は本ファイルの規則を優先する**。
-- 記事の修正・レビューは[[edit-article]]スキルに委ねる(手順5)。修正内容(issueの内容)は既に具体化しているため、edit-article側でPlannerが指摘の却下/採用を新たに判断することはなく、修正プランの策定→Editorによる修正・こまめなcommit→[[review-article]]による検証、という一連の流れをedit-articleが担う。検証で指摘が残った場合、edit-articleの方針(最大5巡)に従って自動的に再修正・再検証されるか、issue化される。
+- 記事の修正・レビューは[[edit-article]]スキルに委ねる(手順5)。修正内容(issueの内容)は既に具体化しているため、edit-article側でPlannerが指摘の却下/採用を新たに判断することはなく、修正プランの策定→Editorによる修正・こまめなcommit→[[review-article]]による検証、という一連の流れをedit-articleが担う。検証で指摘が残った場合、edit-articleの方針(デフォルトで最大3巡、かつ対応下限impact 3)に従って自動的に再修正・再検証されるか、issue化されるか、未解決として報告される。**対応下限はedit-articleの2巡目以降の継続判定にのみ効くため、issueに`impact: 1`・`impact: 2`のラベルが付いていても、そのissueの修正自体は必ず1巡は実行される**(ラベルを理由にedit-articleの呼び出しを省略してはならない)。
 
 ## 手順
 
@@ -38,8 +38,8 @@ description: >-
 
 5. **[[edit-article]]スキルによる修正・検証**
    - issueの「対象記事」「現状の問題点」「改善案」を修正内容として[[edit-article]]スキルを呼び出す。「改善案」に「過去の修正試行(解消せず)」が含まれる場合、edit-article側のPlannerがそれを踏まえて同じ方針を繰り返さず別のアプローチを検討する(references/planner.mdの指示に従う)。issue本文をそのまま入力に含めていれば自然と伝わるため、fix-issue側で改めて要約・加工する必要はない。
-   - edit-article内でPlannerがプランを策定し、Editorが`CONTRIBUTING.md`(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性、対象`stage`のチェックリスト)・`GUID.md`(科目固有の注意点)に従って記事を修正・commitし、[[review-article]]による検証を行う。検証結果に応じてPlannerが再修正を指示するか、issue化するかを判断する(edit-articleの方針通り、この往復は最大5巡)。
-   - edit-articleは対象ファイルの`git add`・`git commit`までを行い、push・PR作成は行わない。edit-articleの実行結果(反映した修正・commit一覧・issue化した指摘・対応できなかった項目)を受け取る。
+   - edit-article内でPlannerがプランを策定し、Editorが`CONTRIBUTING.md`(フロントマター、H2から開始、`requires`整合性、Tips/Note使い分け、中立性、対象`stage`のチェックリスト)・`GUID.md`(科目固有の注意点)に従って記事を修正・commitし、[[review-article]]による検証を行う。検証結果に応じてPlannerが再修正を指示するか、issue化するか、未解決として報告するかを判断する(edit-articleの方針通り、この往復はデフォルトで最大3巡、かつ2巡目以降は対応下限impact 3以上の指摘のみ追う)。ユーザーが対応下限・巡数上限を指定した場合はそれをedit-articleの呼び出しにそのまま渡す。
+   - edit-articleは対象ファイルの`git add`・`git commit`までを行い、push・PR作成は行わない。edit-articleの実行結果(反映した修正・commit一覧・issue化した指摘・未解決のまま終えた指摘・対応できなかった項目)を受け取る。
 
 6. **push・PR作成前の確認**
    - originへのpushとPR作成はリポジトリ外に見える行為のため、edit-articleが行ったcommitの一覧(または`git log`・`git diff main...HEAD`の要約)と、残っている指摘(issue化されたもの・対応できなかったもの)を提示し、実行してよいかユーザーに確認する。
