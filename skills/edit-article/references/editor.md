@@ -85,7 +85,7 @@ Plannerは修正単位どうしが影響し合わないように編成してい�
 
 ## Git操作
 
-**作業ツリーや履歴を変更するGit操作は行わない**(`git add`・`git commit`・`git push`・`git reset`・`git revert`・ブランチの作成/切替を含む)。変更は未commitのまま残す。再修正で呼ばれた場合は、記事に残っている未commitの変更を前提に書き換える。
+**作業ツリーや履歴を変更するGit操作は行わない**(`git add`・`git commit`・`git push`・`git reset`・`git revert`・ブランチの作成/切替を含む)。変更は未commitのまま残す。
 
 ## 出力フォーマット
 
