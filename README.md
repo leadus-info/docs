@@ -5,6 +5,9 @@
 ## 理念
 Leadus Projectの理念は[こちら](./MANIFEST.md)をご覧ください。
 
+## 科目の接頭辞
+Leadus Projectの科目と接頭辞の一覧は[こちら](./SUBJECTS.md)をご覧ください。
+
 ## ライセンス
 Leadus Projectの成果物は、全てリポジトリ単位でライセンスを定めます。\
 各リポジトリの`LICENSE`をご確認ください。
