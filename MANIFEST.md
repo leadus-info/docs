@@ -1,7 +1,7 @@
 # マニフェスト
 
 本ドキュメントは、本サイトが何のために存在し、何を大切にするか（理念・原則）を定めるものです。\
-具体的な作業手順は[貢献の手順](./contribution/WORKFLOW.md)、記事の執筆ルールは[コントリビューションガイド](./contribution/CONTRIBUTING.md)を参照してください。
+貢献の方法と手順は[貢献ガイド](./contribution/CONTRIBUTING.md)、記事の執筆ルールは[執筆ガイド](./contribution/STYLE_GUIDE.md)を参照してください。
 
 ## 対象
 
