@@ -24,7 +24,9 @@ Leadus Projectに参加し、コンテンツの改善・アップデートにご
 | 管理場所 | 管理するもの |
 | --- | --- |
 | docs(本リポジトリ) | [マニフェスト](./MANIFEST.md)、[貢献ガイド](./contribution/CONTRIBUTING.md)(貢献の方法と手順)、[執筆ガイド](./contribution/STYLE_GUIDE.md)(全科目共通の執筆ルール)、[科目の一覧](./SUBJECTS.md)、この役割分担 |
-| 科目リポジトリ | `LICENSE`、`GUID.md`(科目固有の執筆ルール)、記事。`README.md`・`CONTRIBUTING.md`は本リポジトリへの案内のみを書く |
+| [.github](https://github.com/leadus-info/.github) | GitHubの既定ファイル(organizationの全リポジトリに適用されるissueテンプレート・PRテンプレート・`CONTRIBUTING.md`)と組織プロフィール。`CONTRIBUTING.md`は本リポジトリへの案内のみを書く |
+| 科目リポジトリ | `LICENSE`、`GUID.md`(科目固有の執筆ルール)、記事。`README.md`は本リポジトリへの案内のみを書く。issueテンプレート・PRテンプレート・`CONTRIBUTING.md`は置かない(.githubの既定ファイルが適用される) |
 
 - 共通の内容を科目リポジトリに複製しないでください。複製すると、改訂時に内容が食い違う原因になります。
+- 科目リポジトリにissueテンプレート等を置くと、.githubの既定ファイルが適用されなくなります。科目固有の設定が必要になった場合は、先に.githubでの扱いを検討してください。
 - 科目リポジトリを新設するときは、[科目の一覧](./SUBJECTS.md)にリポジトリのURLを記載してください。

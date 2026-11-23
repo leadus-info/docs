@@ -1,0 +1,4 @@
+# leadus-info/.githubの既定のissueテンプレート(科目リポジトリ向けの記事の提案・改善提案)を、
+# このリポジトリでは使わないためのファイル。リポジトリに自前の.github/ISSUE_TEMPLATE/があると、
+# 既定のissueテンプレートは適用されない。テンプレートなしの空白issueのみを許可する。
+blank_issues_enabled: true
