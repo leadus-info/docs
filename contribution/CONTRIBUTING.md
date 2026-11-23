@@ -87,7 +87,11 @@ issueで扱いにくい内容は、[support@leadus.info](mailto:support@leadus.i
 ### ブランチ保護ルール
 
 - **`main`ブランチへの直接変更は禁止**。反映は`main`以外の作業用ブランチ（上記の`article`/`fix`/`improve`）からのPull Requestによるマージのみで行う。
-- GitHub側のbranch protection（PR必須化・直接push禁止の技術的強制）は、organizationがGitHub Freeプランのためリポジトリがprivateだと設定できない（Pro/Team以上が必要）。上記は運用上の取り決めとして遵守すること。
+- 科目リポジトリの`main`には、GitHubのルールセット（ruleset）を設定し、次を技術的にも強制している。管理者にも例外なく適用される。
+  - Pull Requestを経ない変更（直接push）の禁止
+  - force push（履歴の書き換え）の禁止
+  - `main`ブランチの削除の禁止
+- PRのマージに必要な承認（Approve）の数は0としている。マージの可否は、メンテナーがレビューで判断する（下記「6. レビューを受ける」参照）。
 
 ---
 
